@@ -1,0 +1,21 @@
+@import '../../../assets/styles/variables';
+
+.logo {
+    display: flex;
+}
+
+.logo__link {
+    display: flex;
+    align-items: center;   
+}
+
+.logo__icon {
+    fill: $primary-color;
+    display: flex;
+    margin-right: 4px;
+}
+
+.logo__text {
+    font-size: 22px;
+    font-weight: 700;
+}

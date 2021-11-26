@@ -1,0 +1,23 @@
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    backdrop-filter: blur(12px);
+    display: flex;
+    padding: 60px 20px;
+    overflow: auto;
+}
+
+.modal {
+    display: flex;
+    margin: auto;
+    background-color: #fff;
+    width: 100%;
+}
+
+.modal--m {
+    max-width: 600px;
+}

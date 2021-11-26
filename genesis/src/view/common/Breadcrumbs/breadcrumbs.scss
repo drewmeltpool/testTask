@@ -1,0 +1,13 @@
+.breadcrumbs {
+    padding: 40px 20px;
+    display: flex;
+
+    & .breadcrumbs__item:not(:last-child) {
+        margin-right: 40px;
+    }
+}
+
+.breadcrumbs__item {
+    font-size: 14px;
+    color: $secondary-color;
+}

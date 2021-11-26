@@ -1,0 +1,21 @@
+.footer {
+    background-color: #fff;
+    padding: 20px;
+    color: $secondary-color;
+}
+
+.footer__list {
+    padding: 15px 0;
+
+    & .footer__item:not(:last-child) {
+        margin-bottom: 12px;
+    }
+}
+
+.footer__item {
+    text-align: center;
+}
+
+.footer__text {
+    text-align: center;
+}
