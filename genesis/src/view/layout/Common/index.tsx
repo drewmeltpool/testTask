@@ -9,7 +9,9 @@ const Common: React.FC = () => {
     <div className="page">
       <Navbar />
       <main className="main">
-        <Breadcrumbs />
+        <div className="container">
+          <Breadcrumbs />
+        </div>
         <Outlet />
       </main>
       <Footer />

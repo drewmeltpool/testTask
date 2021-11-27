@@ -1,3 +1,4 @@
+@import '/src/view/common/Image/image';
 @import '/src/view/common/Button/button';
 @import '/src/view/common/Icon/icon';
 @import '/src/view/common/Modal/modal';
@@ -5,3 +6,6 @@
 @import '/src/view/components/Logo/logo';
 @import '/src/view/components/Navbar/navbar';
 @import '/src/view/components/Footer/footer';
+@import '/src/view/components/Post/post';
+
+@import './banner';

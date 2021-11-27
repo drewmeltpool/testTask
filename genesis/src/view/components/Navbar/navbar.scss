@@ -42,6 +42,7 @@
     background-color: #f6f6f6;
     overflow: auto;
     display: flex;
+    z-index: 5;
 }
 
 .menu__close{
@@ -53,14 +54,11 @@
 
 .menu__list {
     padding: 40px 15px;
+    font-size: 16px;
 }
 
 .menu__item {
     margin-bottom: 24px;
-}
-
-.menu__list {
-    font-size: 24px;
 }
 
 .menu,
@@ -69,6 +67,8 @@
 }
 
 .search__modal {
+    overflow: hidden;
+    box-sizing: border-box;
     display: block;
     margin: auto;
     border-radius: 12px;
@@ -95,6 +95,7 @@
     font-family: inherit;
     border-radius: 8px;
     border: none;
+    width: 100%;
     box-shadow: rgba(208, 208, 208, .2) 0px 4px 4px;
     padding: 8px;
     font-size: 16px;
@@ -120,8 +121,9 @@
 }
 
 .search__result {
-    height: 450px;
     overflow: auto;
+    height: 70%;
+    margin: 20px 0;
 }
 
 @media (max-width: $tablet) {
@@ -136,5 +138,16 @@
 
     .menu--open{
         display: block;
+    }
+
+    .search__modal {
+        margin: 0;
+        border-radius: 0;
+        max-width: unset;
+    }
+
+    .search__modal-btn {
+        position: static;
+        margin-left: auto;
     }
 }

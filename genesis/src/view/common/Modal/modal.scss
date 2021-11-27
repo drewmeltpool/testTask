@@ -7,8 +7,8 @@
     background-color: rgba(0,0,0,.5);
     backdrop-filter: blur(12px);
     display: flex;
-    padding: 60px 20px;
     overflow: auto;
+    z-index: 10;
 }
 
 .modal {

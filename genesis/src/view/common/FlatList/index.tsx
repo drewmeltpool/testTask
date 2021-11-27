@@ -24,11 +24,9 @@ const FlatList: React.FC<IFlatList> = ({
   setKey,
   tag: Tag = 'div',
   className,
-  itemProps,
+  itemProps = {},
   ...rest
 }) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   const { tag: Elem = 'div', ...restItemProps } = itemProps;
 
   const elements = useMemo(

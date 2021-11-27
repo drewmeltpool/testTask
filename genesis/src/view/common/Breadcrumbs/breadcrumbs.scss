@@ -1,13 +1,15 @@
 .breadcrumbs {
-    padding: 40px 20px;
     display: flex;
-
-    & .breadcrumbs__item:not(:last-child) {
-        margin-right: 40px;
-    }
+    margin: 20px 0;
 }
 
 .breadcrumbs__item {
+    display: flex;
+    align-items: center;
     font-size: 14px;
     color: $secondary-color;
+}
+
+.breadcrumbs__icon {
+    margin: 0 8px;
 }
