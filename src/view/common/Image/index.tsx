@@ -1,10 +1,6 @@
 import React from 'react';
+import { IImage } from 'src/types/IImage';
 import { classNames, imageName } from 'src/utils';
-
-interface IImage {
-  src: string;
-  className?: string;
-}
 
 const Image: React.FC<IImage> = ({ src, className }) => {
   return (

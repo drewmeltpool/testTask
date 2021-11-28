@@ -1,5 +1,5 @@
 import React from 'react';
-import { IIcon } from '../../IIcon';
+import { IIcon } from 'src/types/IIcon';
 
 const LeftArrow: React.FC<IIcon> = ({ fill }) => {
   return (

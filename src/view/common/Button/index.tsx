@@ -1,6 +1,6 @@
 import React from 'react';
 import { classNames } from 'src/utils';
-import { IButton } from './IProps';
+import { IButton } from 'src/types/IButton';
 
 const Button: React.FC<IButton> = ({
   text,

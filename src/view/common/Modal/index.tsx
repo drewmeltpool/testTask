@@ -1,14 +1,6 @@
 import React from 'react';
+import { IModal } from 'src/types/IModal';
 import { classNames } from 'src/utils';
-
-interface IModal {
-  size?: 'm';
-  isOpen: boolean;
-  isCloseOnOverlay?: boolean;
-  closeModal: () => void;
-  children: (_props: { closeModal: () => void }) => React.ReactNode | string;
-  className?: string;
-}
 
 const Modal: React.FC<IModal> = ({
   size,

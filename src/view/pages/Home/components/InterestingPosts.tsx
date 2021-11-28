@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IPlant } from 'src/types/Plant';
+import { IPlant } from 'src/types/IPlant';
 import FlatList from 'src/view/common/FlatList';
 import Post from 'src/view/components/Post';
 import AddBlock from './AddBlock';
@@ -55,9 +55,6 @@ const InterestingPosts: React.FC = () => {
         component={(plant: IPlant) => (
           <Post
             variant="s"
-            src={
-              'https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-            }
             date={Date.now()}
             title={plant.title}
             description={plant.body}
@@ -74,9 +71,6 @@ const InterestingPosts: React.FC = () => {
         component={(plant: IPlant) => (
           <Post
             variant="s"
-            src={
-              'https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-            }
             date={Date.now()}
             title={plant.title}
             description={plant.body}
