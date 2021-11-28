@@ -1,4 +1,4 @@
-import { classNames } from 'utils';
+import { classNames } from 'src/utils';
 import * as Icons from './components';
 
 interface IProps {

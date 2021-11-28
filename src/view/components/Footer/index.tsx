@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FlatList from 'view/common/FlatList';
+import FlatList from 'src/view/common/FlatList';
 import { footerLinks } from './footerLinks';
 
 const Footer: React.FC = () => (

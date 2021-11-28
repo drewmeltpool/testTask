@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { breadCrumpsParse, capitalize } from 'utils';
+import { breadCrumpsParse, capitalize } from 'src/utils';
 import FlatList from '../FlatList';
 import Icon from '../Icon';
 

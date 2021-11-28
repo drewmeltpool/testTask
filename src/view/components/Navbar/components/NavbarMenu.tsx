@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { classNames } from 'utils';
-import Button from 'view/common/Button';
-import FlatList from 'view/common/FlatList';
-import Icon from 'view/common/Icon';
+import { classNames } from 'src/utils';
+import Button from 'src/view/common/Button';
+import FlatList from 'src/view/common/FlatList';
+import Icon from 'src/view/common/Icon';
 import { navLinks } from '../navLinks';
 
 interface IProps {

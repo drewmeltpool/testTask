@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { classNames } from '../../../utils';
+import { classNames } from 'src/utils';
 
 type IFlatItem = {
   tag?: keyof JSX.IntrinsicElements | React.ExoticComponent;

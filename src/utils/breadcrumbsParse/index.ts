@@ -1,4 +1,4 @@
-import { pipe } from 'utils';
+import { pipe } from 'src/utils';
 
 export const breadCrumpsParse = pipe(
   (arg) => arg.split('/'),

@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "jsx": "react-jsx",
     "target": "es5",
     "module": "esnext",
     "outDir": "build",
-    "rootDir": "src",
+    // "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

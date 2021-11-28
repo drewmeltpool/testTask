@@ -1,6 +1,6 @@
 import React from 'react';
-import { classNames } from 'utils';
-import Image from 'view/common/Image';
+import { classNames } from 'src/utils';
+import Image from 'src/view/common/Image';
 
 interface IPost {
   variant: 'l' | 'm' | 's' | 'xs';

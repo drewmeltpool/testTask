@@ -1,19 +1,20 @@
 import React from 'react';
-import { useWeather } from 'hooks';
+import { useWeather } from 'src/hooks';
 import { Field, Form, Formik } from 'formik';
-import Icon from 'view/common/Icon';
+import Icon from 'src/view/common/Icon';
 
-import addBanner from '../../../assets/image/addBanner.svg';
-import searchBanner from '../../../assets/image/searchBanner.svg';
-import Button from 'view/common/Button';
-import Post from 'view/components/Post';
-import Logo from 'view/components/Logo';
-import Image from 'view/common/Image';
-import { capitalize } from 'utils';
-import { Link } from 'react-router-dom';
+import addBanner from 'src/assets/image/addBanner.svg';
+import searchBanner from 'src/assets/image/searchBanner.svg';
+import Button from 'src/view/common/Button';
+import Post from 'src/view/components/Post';
+import Logo from 'src/view/components/Logo';
+import Image from 'src/view/common/Image';
+import { capitalize } from 'src/utils';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const [err, data] = useWeather({ city: 'Kyiv', units: 'metric' });
+  const navigate = useNavigate();
 
   return (
     <div className="container">
@@ -27,7 +28,12 @@ const Home: React.FC = () => {
           </h5>
         )}
 
-        <Formik initialValues={{ search: '' }} onSubmit={console.log}>
+        <Formik
+          initialValues={{ search: '' }}
+          onSubmit={({ search }) => {
+            navigate(`/search?text=${search}`);
+          }}
+        >
           <Form>
             <div className="search-banner__input-wrapper">
               <Field

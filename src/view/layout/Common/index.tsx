@@ -1,8 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Breadcrumbs from 'view/common/Breadcrumbs';
-import Footer from 'view/components/Footer';
-import Navbar from 'view/components/Navbar';
+import Breadcrumbs from 'src/view/common/Breadcrumbs';
+import Footer from 'src/view/components/Footer';
+import Navbar from 'src/view/components/Navbar';
 
 const Common: React.FC = () => {
   return (

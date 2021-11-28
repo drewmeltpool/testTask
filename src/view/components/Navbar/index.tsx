@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import Button from 'view/common/Button';
-import Icon from 'view/common/Icon';
+import Button from 'src/view/common/Button';
+import Icon from 'src/view/common/Icon';
 import Logo from '../Logo';
 
 import NavbarModal from './components/NavbarModal';
