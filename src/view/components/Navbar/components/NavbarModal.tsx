@@ -6,6 +6,7 @@ import Post from 'src/view/components/Post';
 import FlatList from 'src/view/common/FlatList';
 import { capitalize, debounce } from 'src/utils';
 import useFetch from 'src/hooks/useFetch';
+import Empty from '../../Empty';
 
 interface IProps {
   isOpen: boolean;
@@ -52,22 +53,26 @@ const NavbarModal: React.FC<IProps> = ({ onClose, isOpen }) => {
               />
               <Icon icon="Logo" className="form__search-icon" />
             </form>
-            <FlatList
-              className="search__result"
-              data={plantsResult}
-              itemProps={{
-                tag: React.Fragment,
-              }}
-              component={({ title, body }) => (
-                <Post
-                  variant="xs"
-                  src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                  date={Date.now()}
-                  title={capitalize(title)}
-                  description={body}
-                />
-              )}
-            />
+            {plantsResult.length || !inputValue ? (
+              <FlatList
+                className="search__result"
+                data={plantsResult}
+                itemProps={{
+                  tag: React.Fragment,
+                }}
+                component={({ title, body }) => (
+                  <Post
+                    variant="xs"
+                    src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    date={Date.now()}
+                    title={capitalize(title)}
+                    description={body}
+                  />
+                )}
+              />
+            ) : (
+              <Empty />
+            )}
           </>
         );
       }}
