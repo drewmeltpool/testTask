@@ -1,9 +1,10 @@
 import React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import useFetch from 'src/hooks/useFetch';
 import FlatList from 'src/view/common/FlatList';
 import Empty from 'src/view/components/Empty';
 import Post from 'src/view/components/Post';
+import EmptySearch from './Empty';
 
 const Search: React.FC = () => {
   const [param] = useSearchParams();
@@ -34,7 +35,7 @@ const Search: React.FC = () => {
             )}
           />
         ) : (
-          <Empty />
+          <EmptySearch />
         ))}
     </div>
   );

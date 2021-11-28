@@ -71,7 +71,9 @@ const NavbarModal: React.FC<IProps> = ({ onClose, isOpen }) => {
                 )}
               />
             ) : (
-              <Empty />
+              <div className="search-empty">
+                <Empty />
+              </div>
             )}
           </>
         );

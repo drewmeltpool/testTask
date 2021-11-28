@@ -17,7 +17,7 @@ const SearchBox: React.FC = () => {
       <h4 className="add-banner__subtitle">
         Get rid of limits and read everything you wish
       </h4>
-      <Link className="add-banner__link link" to="/home">
+      <Link className="link primary-link" to="/get-started">
         {capitalize('try for free')}
       </Link>
 

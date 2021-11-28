@@ -82,25 +82,13 @@
 }
 
 .add-banner__subtitle {
-    margin-top: 8px;
+    margin: 8px 0 24px 0;
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
     display: flex;
     align-items: center;
     color: #000;
-}
-
-.add-banner__link {
-    margin-top: 24px;
-    border-radius: 8px;
-    display: inline-block;
-    background-color: $primary-color;
-    padding: 8px 32px;
-    color: #fff;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
 }
 
 .add-banner__image {
