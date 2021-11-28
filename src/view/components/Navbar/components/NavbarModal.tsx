@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Field, Form, Formik } from 'formik';
 import Button from 'src/view/common/Button';
 import Icon from 'src/view/common/Icon';
 import Modal from 'src/view/common/Modal';
@@ -14,22 +13,16 @@ interface IProps {
 }
 
 const NavbarModal: React.FC<IProps> = ({ onClose, isOpen }) => {
-  const [result, setResult] = useState([]);
+  const [inputValue, setInputValue] = useState<string>('');
 
-  const { payload, loading } = useFetch(
-    'https://jsonplaceholder.typicode.com/posts',
-    [result]
+  const [plants] = useFetch(
+    inputValue && 'https://jsonplaceholder.typicode.com/posts'
   );
 
-  const findPlant = (text: string) => {
-    if (text) {
-      setResult(payload.filter(({ title }: any) => title.includes(text)));
-    } else {
-      setResult([]);
-    }
-  };
-
-  const searchDebounce = debounce(findPlant, 300);
+  const plantsResult = inputValue
+    ? (plants || []).filter(({ title }: any) => title.includes(inputValue))
+    : [];
+  const searchDebounce = debounce(setInputValue, 300);
 
   return (
     <Modal
@@ -47,27 +40,24 @@ const NavbarModal: React.FC<IProps> = ({ onClose, isOpen }) => {
               className="search__modal-btn"
             />
 
-            <Formik initialValues={{ search: '' }} onSubmit={() => undefined}>
-              {({ setFieldValue }) => (
-                <Form className="form__search">
-                  <Field
-                    name="search"
-                    placeholder="Search plants"
-                    autoComplete="off"
-                    className="form__search-input"
-                    onChange={(e: any) => {
-                      setFieldValue('search', e.target.value);
-                      searchDebounce(e.target.value);
-                    }}
-                  />
-                  <Icon icon="Logo" className="form__search-icon" />
-                </Form>
-              )}
-            </Formik>
-            {loading + ''}
+            <form className="form__search" onSubmit={(e) => e.preventDefault()}>
+              <input
+                name="search"
+                placeholder="Search plants"
+                autoComplete="off"
+                className="form__search-input"
+                onChange={(e) => {
+                  searchDebounce(e.target.value);
+                }}
+              />
+              <Icon icon="Logo" className="form__search-icon" />
+            </form>
             <FlatList
               className="search__result"
-              data={result}
+              data={plantsResult}
+              itemProps={{
+                tag: React.Fragment,
+              }}
               component={({ title, body }) => (
                 <Post
                   variant="xs"

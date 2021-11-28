@@ -6,7 +6,8 @@
     border-radius: 12px;
     overflow: hidden;
     height: 364px;
-    background-color: #E0E5EE
+    background-color: #E0E5EE;
+    border: none;
 }
 
 .post__date {
@@ -78,10 +79,11 @@
 
     .post__body {
         flex: 1;
+        padding: 0;
     }
 
     .post__title {
-        padding: 0;
+        padding: 6px 0;
     }
 
     .post__date {

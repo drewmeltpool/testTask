@@ -1,6 +1,5 @@
 import React from 'react';
 import { classNames, imageName } from 'src/utils';
-import './image.scss';
 
 interface IImage {
   src: string;

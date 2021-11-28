@@ -123,6 +123,8 @@
     overflow: auto;
     height: 70%;
     margin: 20px 0;
+    display: grid;
+    grid-gap: 20px;
 }
 
 @media (max-width: $tablet) {

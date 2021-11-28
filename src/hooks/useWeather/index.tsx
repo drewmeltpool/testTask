@@ -22,7 +22,7 @@ const useWeather = ({ city, units }: WeatherType) => {
     })();
   }, [city, units]);
 
-  return [error, weather];
+  return [weather, error];
 };
 
 export default useWeather;

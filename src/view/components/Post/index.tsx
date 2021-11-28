@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from 'src/utils';
+import { capitalize, classNames } from 'src/utils';
 import Image from 'src/view/common/Image';
 
 interface IPost {
@@ -27,7 +27,7 @@ const Post: React.FC<IPost> = ({
       <Image src={src} className="post__image" />
       <div className="post__body">
         <h5 className="post__date">{`${month} ${day}`}</h5>
-        <h5 className="post__title">{title}</h5>
+        <h5 className="post__title">{capitalize(title)}</h5>
         <h5 className="post__description">{description}</h5>
       </div>
     </div>

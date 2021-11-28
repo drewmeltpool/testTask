@@ -1,27 +1,21 @@
 import { useEffect, useState } from 'react';
 
-const useFetch = (url: string, dependencies: Array<unknown>) => {
-  const [payload, setPayload] = useState([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState();
+function useFetch<Payload = undefined>(
+  url: string
+): [data: Payload | null, load: boolean, error: unknown] {
+  const [data, setData] = useState<Payload | null>(null);
+  const [done, setDone] = useState(false);
+  const [err, setErr] = useState();
 
   useEffect(() => {
-    (async () => {
-      setLoading(true);
-      try {
-        const answer = await fetch(url);
-        const json = await answer.json();
-        setPayload(json);
-      } catch (error: any) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [url, ...dependencies]);
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((d: Payload) => setData(d))
+      .catch((e) => setErr(e))
+      .finally(() => setDone(true));
+  }, [url]);
 
-  return { error, payload, loading };
-};
+  return [data, done, err];
+}
 
 export default useFetch;
