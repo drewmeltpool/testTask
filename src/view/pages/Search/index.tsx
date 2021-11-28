@@ -21,7 +21,7 @@ const Search: React.FC = () => {
         (plantsResult.length ? (
           <FlatList
             data={plantsResult}
-            className="search__result"
+            className="search__answer"
             itemProps={{ tag: React.Fragment }}
             component={({ title, body }) => (
               <Post
